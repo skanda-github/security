@@ -1,0 +1,49 @@
+### Register as USER
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "firstName": "Skanda",
+  "lastName": "Tejaswi D",
+  "username": "helloskanda",
+  "password": "123",
+  "role": "USER"
+}
+
+### Login as USER
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "helloskanda",
+  "password": "123"
+}
+
+### Access common endpoint with USER token
+GET http://localhost:8080/success-common
+Authorization: Bearer <JWT_TOKEN_FROM_LOGIN>
+
+### Register as ADMIN
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "firstName": "Skanda",
+  "lastName": "Admin",
+  "username": "helloskandaadmin",
+  "password": "1234",
+  "role": "ADMIN"
+}
+
+### Login as ADMIN
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "helloskandaadmin",
+  "password": "1234"
+}
+
+### Access admin endpoint with ADMIN token
+GET http://localhost:8080/success-admin
+Authorization: Bearer <JWT_TOKEN_FROM_LOGIN>
